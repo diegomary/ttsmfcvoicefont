@@ -250,9 +250,9 @@ public:
 public:
 	afx_msg void OnDataBitriphonesvisualizer();
 public:
-	afx_msg void OnFileImportwordsfromanaccessfile();
+	//afx_msg void OnFileImportwordsfromanaccessfile();
 public:
-	afx_msg void OnFileImportfromaccessfile();
+	//afx_msg void OnFileImportfromaccessfile();
 	afx_msg void OnNMCustomdrawSliderpause(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnStnClickedSposition();
 };

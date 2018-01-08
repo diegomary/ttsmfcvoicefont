@@ -316,7 +316,7 @@ ON_EN_CHANGE(IDC_EDITFIND, &CTTSView::OnEnChangeEditfind)
 ON_COMMAND(ID_VOICE_LOADTRIPHONESKNOWLEDGE, &CTTSView::OnVoiceLoadtriphonesknowledge)
 ON_COMMAND(ID_DATA_BITRIPHONESVISUALIZER, &CTTSView::OnDataBitriphonesvisualizer)
 
-ON_COMMAND(ID_FILE_IMPORTFROMACCESSFILE, &CTTSView::OnFileImportfromaccessfile)
+//ON_COMMAND(ID_FILE_IMPORTFROMACCESSFILE, &CTTSView::OnFileImportfromaccessfile)
 ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDERPAUSE, &CTTSView::OnNMCustomdrawSliderpause)
 ON_STN_CLICKED(IDC_SPOSITION, &CTTSView::OnStnClickedSposition)
 END_MESSAGE_MAP()
@@ -6331,70 +6331,70 @@ bitriviewer->SetWindowText("Spectral view of BiTriphonems Knowledge 5000 maximum
 }
 
 
-void CTTSView::OnFileImportfromaccessfile()
-{
-	CTTSDoc* pDoc = GetDocument();
-
-
- // "*.my" for "MyType Files" and "*.*' for "All Files."
-   static char BASED_CODE szFilter[] = "Access Word Dictionary (*.mdb)|*.mdb|Only Access files(*Mdb*)|*Mdb*||";
-     CFileDialog fileDlg (TRUE, "Mdb", "*.Mdb",
-      OFN_OVERWRITEPROMPT| OFN_HIDEREADONLY, szFilter, this);
-      if( fileDlg.DoModal ()==IDOK )
-   {
-CString Written,Pronounced;
-INT_PTR num = pDoc->Total.GetCount();
-
-// database creation
-COleVariant vWritten,vPronounced;
-CDaoDatabase db;
-db.Open(fileDlg.GetPathName(),FALSE,FALSE,_T("") );
-CDaoRecordset recordset = CDaoRecordset(&db);
-recordset.Open(dbOpenTable,CString("Words"),dbReadOnly);
-
-recordset.MoveFirst();
-pDoc->Total.RemoveAll();
-vector <dictionary*> newdic(recordset.GetRecordCount());
-for (int n = 0 ; n< recordset.GetRecordCount();n++)
-{
-recordset.GetFieldValue(CString("written"), vWritten);
-recordset.GetFieldValue(CString("pronounced"), vPronounced);
-Written = V_BSTRT( &vWritten );
-Pronounced = V_BSTRT( &vPronounced );
-newdic[n] = new dictionary;
-newdic[n]->SetWritten(Written);
-newdic[n]->SetPronounced(Pronounced);
-pDoc->Total.Add(newdic[n]);
-recordset.MoveNext();
-}
-	  }
- // now we have to populate the list box
- 
-CListBox * pList =(CListBox*)GetDlgItem(IDC_LISTWORD);
-pList->ResetContent();
-int q = (int)(pDoc->Total.GetSize());
-		if(q>=0)
-	{
-		pList->ResetContent();
-		dictionary * temp;
-		for (int p = 0; p < q; ++p)
-			{
-				temp = (dictionary*)pDoc->Total.GetAt(p);
-				CString alfa=temp->GetWritten();
-				pList->AddString((LPCSTR)alfa);
-			}
-	}
-
-PopulateView();
-// End list box population
-		CString report;
-		report.Format("Number of inserted words = %d",pList->GetCount());
-
-OnBnClickedFirst();
-
-		AfxMessageBox(report);
-
-}
+//void CTTSView::OnFileImportfromaccessfile()
+//{
+//	CTTSDoc* pDoc = GetDocument();
+//
+//
+// // "*.my" for "MyType Files" and "*.*' for "All Files."
+//   static char BASED_CODE szFilter[] = "Access Word Dictionary (*.mdb)|*.mdb|Only Access files(*Mdb*)|*Mdb*||";
+//     CFileDialog fileDlg (TRUE, "Mdb", "*.Mdb",
+//      OFN_OVERWRITEPROMPT| OFN_HIDEREADONLY, szFilter, this);
+//      if( fileDlg.DoModal ()==IDOK )
+//   {
+//CString Written,Pronounced;
+//INT_PTR num = pDoc->Total.GetCount();
+//
+//// database creation
+//COleVariant vWritten,vPronounced;
+//CDaoDatabase db;
+//db.Open(fileDlg.GetPathName(),FALSE,FALSE,_T("") );
+//CDaoRecordset recordset = CDaoRecordset(&db);
+//recordset.Open(dbOpenTable,CString("Words"),dbReadOnly);
+//
+//recordset.MoveFirst();
+//pDoc->Total.RemoveAll();
+//vector <dictionary*> newdic(recordset.GetRecordCount());
+//for (int n = 0 ; n< recordset.GetRecordCount();n++)
+//{
+//recordset.GetFieldValue(CString("written"), vWritten);
+//recordset.GetFieldValue(CString("pronounced"), vPronounced);
+//Written = V_BSTRT( &vWritten );
+//Pronounced = V_BSTRT( &vPronounced );
+//newdic[n] = new dictionary;
+//newdic[n]->SetWritten(Written);
+//newdic[n]->SetPronounced(Pronounced);
+//pDoc->Total.Add(newdic[n]);
+//recordset.MoveNext();
+//}
+//	  }
+// // now we have to populate the list box
+// 
+//CListBox * pList =(CListBox*)GetDlgItem(IDC_LISTWORD);
+//pList->ResetContent();
+//int q = (int)(pDoc->Total.GetSize());
+//		if(q>=0)
+//	{
+//		pList->ResetContent();
+//		dictionary * temp;
+//		for (int p = 0; p < q; ++p)
+//			{
+//				temp = (dictionary*)pDoc->Total.GetAt(p);
+//				CString alfa=temp->GetWritten();
+//				pList->AddString((LPCSTR)alfa);
+//			}
+//	}
+//
+//PopulateView();
+//// End list box population
+//		CString report;
+//		report.Format("Number of inserted words = %d",pList->GetCount());
+//
+//OnBnClickedFirst();
+//
+//		AfxMessageBox(report);
+//
+//}
 
 void CTTSView::OnNMCustomdrawSliderpause(NMHDR *pNMHDR, LRESULT *pResult)
 {
