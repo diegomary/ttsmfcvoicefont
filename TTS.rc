@@ -1,0 +1,754 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\TTS.ico"
+IDR_TTSTYPE             ICON                    "res\\TTSDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  32, 32
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_RECORD_FIRST32774
+    BUTTON      ID_RECORD_LAST32775
+    BUTTON      ID_RECORD_PREVIOUS
+    BUTTON      ID_RECORD_NEXT32783
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open MAIN WORD DB...\tCtrl+O", ID_FILE_OPEN
+        MENUITEM "&Save Word Database\tCtrl+S", ID_FILE_SAVE
+        MENUITEM "Save Word Database &As...",   ID_FILE_SAVE_AS
+        MENUITEM "Import FROM ACCESS FILE",     ID_FILE_IMPORTFROMACCESSFILE
+        MENUITEM "Export MAIN WORD DB to A text file", ID_FILE_SAVE_AS_TEXT
+        MENUITEM "Export MAIN WORD DB to an ACCESS File", ID_FILE_EXPORTDATABASETOANACCESFILE
+        MENUITEM "Export words to a dbe file for later append", ID_FILE_EXPORTWORDSTOADBEFILE
+        MENUITEM "Append words from a dbe file", ID_FILE_IMPORTWORDSFROMADBEFILE
+        MENUITEM "Import words from a dbe file for full archive", ID_FILE_IMPORTWORDSFROMADBEFILEFORFULLARCHIVE
+        MENUITEM SEPARATOR
+        MENUITEM "Save SEL Text to Wa&ve File", ID_FILE_SAVESELTEXTTOWAVEFILE
+        MENUITEM "Save ALL Text to &Wave File", ID_FILE_SAVETEXTTOWAVEFILE
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "Record"
+    BEGIN
+        MENUITEM "&First",                      ID_RECORD_FIRST32774
+        MENUITEM "&Last",                       ID_RECORD_LAST32775
+        MENUITEM "&Next",                       ID_RECORD_NEXT32783
+        MENUITEM "&Previous",                   ID_RECORD_PREVIOUS
+        MENUITEM "&Delete Current",             ID_RECORD_DELETECURRENT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR, INACTIVE
+        MENUITEM "&Phonems",                    ID_VIEWPHONEMS, INACTIVE
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "Fonts"
+    BEGIN
+        MENUITEM "&Text style",                 ID_FONTS_TEXTSTYLE
+    END
+    POPUP "Data"
+    BEGIN
+        MENUITEM "Data Inspect",                ID_DATA_DATAINDEXING
+        MENUITEM "Phonems Visualizer",          ID_DATA_PHONEMSVISUALIZER
+        MENUITEM "BiTriphones Visualizer",      ID_DATA_BITRIPHONESVISUALIZER
+    END
+    POPUP "&Voice"
+    BEGIN
+        MENUITEM "Load Original Voice Module",  ID_VOICE_LOADORIGINALVOICEMODULE
+        MENUITEM "Load User Modified Voice Module", ID_VOICE_LOADUSERMODIFIEDVOICEMODULE
+        MENUITEM "Load Triphones Knowledge",    ID_VOICE_LOADTRIPHONESKNOWLEDGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About TTS...",               ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TTS"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,105,68,21,20
+    LTEXT           "TTS Version 3.0",IDC_STATIC,89,46,59,8,SS_NOPREFIX
+    LTEXT           "Diego Burlando tel. +39 3398021533",IDC_STATIC,59,105,121,11
+    DEFPUSHBUTTON   "OK",IDOK,89,132,50,16,WS_GROUP
+    PUSHBUTTON      "Check Indexes",IDC_BUTTON1,200,148,28,15,NOT WS_VISIBLE
+    LTEXT           "to My wife ",IDC_STATIC,99,19,36,15
+END
+
+IDD_TTS_FORM DIALOGEX 0, 0, 512, 380
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_WRITTEN,6,30,216,22,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_PRON,36,155,282,22,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "Word as it is pronounced",IDC_STATIC2,6,54,104,12,NOT WS_VISIBLE
+    LTEXT           "Word As it is written",IDC_STATIC1,44,78,101,12,NOT WS_VISIBLE
+    PUSHBUTTON      "First",IDC_FIRST,43,123,31,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Prev.",IDC_PREVIOUS,152,133,31,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Next",IDC_NEXT,183,109,31,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Last",IDC_LAST,76,123,31,13,NOT WS_VISIBLE
+    LTEXT           "Record 0 di 0",IDC_SPOSITION,410,7,98,12,NOT WS_VISIBLE
+    PUSHBUTTON      "Find Word",IDC_FIND,226,101,40,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDITFIND,13,78,217,21,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LISTBOX         IDC_LISTWORD,295,34,171,100,LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP,WS_EX_STATICEDGE
+    LTEXT           "Word List",IDC_STATIC4,56,107,84,8,NOT WS_VISIBLE
+    PUSHBUTTON      "PLAY WORD",IDC_PLAYWAVE,243,47,42,14,NOT WS_VISIBLE
+    LTEXT           "TEXT",IDC_STATIC3,5,126,38,10,NOT WS_VISIBLE
+    PUSHBUTTON      "Speak",IDC_BTNSPEAK,485,247,22,14
+    PUSHBUTTON      "Copy",IDC_COPYCLIP,0,369,27,11
+    PUSHBUTTON      "Paste",IDC_PASTECLIP,27,369,27,11
+    PUSHBUTTON      "Stop",IDC_STOPSPEAK,484,299,22,13
+    PUSHBUTTON      "Clear Text",IDC_CLEARTEXT,54,369,39,11
+    PUSHBUTTON      "SpeakSEL",IDC_SPEAKSEL,475,317,34,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Pause",IDC_PAUSE,485,265,22,12
+    PUSHBUTTON      "Resume",IDC_RESUME,477,281,29,14
+    PUSHBUTTON      "Open Text File",IDC_OPENTEXTFILE,292,6,53,13
+    PUSHBUTTON      "Load Voice",IDC_LOADVOICE,169,53,41,13,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATVOICETYPE,95,365,293,14,WS_BORDER
+    PUSHBUTTON      "Save Text File",IDC_SAVETEXTFILE,349,7,51,13
+    CONTROL         "",IDC_SLIDERPITCH,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_ENABLESELRANGE | WS_TABSTOP,133,3,147,13
+    LTEXT           "Voice Pitch And Speed",IDC_STATICPITCH,1,6,90,10
+    PUSHBUTTON      "R",IDC_BUTTONRESETSPEED,109,5,14,10
+    CONTROL         "",IDC_RICHEDITTEXT,"RichEdit20A",ES_MULTILINE | ES_NOHIDESEL | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_TABSTOP,5,21,470,344
+    CONTROL         "",IDC_SLIDERPAUSE,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,492,144,9,99
+    LTEXT           "Voice Stretch ",IDC_STATIC,480,92,23,21
+    EDITTEXT        IDC_PAUSEW,481,115,22,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_PROGSAVE,"msctls_progress32",PBS_SMOOTH | WS_BORDER,391,366,116,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x21L
+#else
+ FILEFLAGS 0x20L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "DMM"
+            VALUE "FileDescription", "Text-to-Speech Engine English"
+            VALUE "FileVersion", "6.0.0.3"
+            VALUE "InternalName", "TTS.exe"
+            VALUE "LegalCopyright", "This software is owned by DMM"
+            VALUE "LegalTrademarks", "DMM"
+            VALUE "OriginalFilename", "TTS.exe"
+            VALUE "ProductName", "Personal Voice"
+            VALUE "ProductVersion", "7.0.0.1"
+            VALUE "SpecialBuild", "win32 "
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "TTS\n\nTTS\nTTS Files (*.tts)\n.tts\nTTS.Document\nTTS.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "TTS"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTON32772          "Previous record"
+    ID_BUTTON32773          "Next Record"
+    ID_RECORD_FIRST32774    "\nGoes to the first record in the word database"
+    ID_RECORD_LAST32775     "\nGoes to the last record in the word database"
+    ID_RECORD_NEXT32783     "\nGoes to the next record"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_RECORD_PREVIOUS      "\nGoes to the previous record"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEWPHONEMS          "Hide or show the Phonems"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON3               ICON                    "res\\ARW01UP.ICO"
+IDI_ICON4               ICON                    "res\\ARW01DN.ICO"
+IDI_ICON5               ICON                    "res\\ARW01LT.ICO"
+IDI_ICON6               ICON                    "res\\ARW01RT.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_BUTTONAA
+    BUTTON      ID_BUTTONAE
+    BUTTON      ID_BUTTONAH
+    BUTTON      ID_BUTTONAO
+    BUTTON      ID_BUTTONOO
+    BUTTON      ID_BUTTONAW
+    BUTTON      ID_BUTTONAX
+    BUTTON      ID_BUTTONAY
+    BUTTON      ID_BUTTONB
+    BUTTON      ID_BUTTONCH
+    BUTTON      ID_BUTTOND
+    BUTTON      ID_BUTTONDH
+    BUTTON      ID_BUTTONEH
+    BUTTON      ID_BUTTONER
+    BUTTON      ID_BUTTONEY
+    BUTTON      ID_BUTTONF
+    BUTTON      ID_BUTTONG
+    BUTTON      ID_BUTTONH
+    BUTTON      ID_BUTTONIH
+    BUTTON      ID_BUTTONIY
+    BUTTON      ID_BUTTONJH
+    BUTTON      ID_BUTTONK
+    BUTTON      ID_BUTTONL
+    BUTTON      ID_BUTTONM
+    BUTTON      ID_BUTTONN
+    BUTTON      ID_BUTTONNG
+    BUTTON      ID_BUTTONOW
+    BUTTON      ID_BUTTONOY
+    BUTTON      ID_BUTTONP
+    BUTTON      ID_BUTTONR
+    BUTTON      ID_BUTTONS
+    BUTTON      ID_BUTTONSH
+    BUTTON      ID_BUTTONT
+    BUTTON      ID_BUTTONTH
+    BUTTON      ID_BUTTONUH
+    BUTTON      ID_BUTTONUW
+    BUTTON      ID_BUTTONV
+    BUTTON      ID_BUTTONW
+    BUTTON      ID_BUTTONY
+    BUTTON      ID_BUTTONZ
+    BUTTON      ID_BUTTONZH
+    BUTTON      ID_BUTTONSTRESS
+    BUTTON      ID_BUTTONPP
+    BUTTON      ID_BUTTONTT
+    BUTTON      ID_BUTTONRF
+    BUTTON      ID_BUTTONLL
+    BUTTON      ID_BUTTONDD
+    BUTTON      ID_BUTTONGG
+    BUTTON      ID_BUTTONVV
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENUPHONEMS MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Save Personalized Voice as", ID_FILE_SAVEPERSONALIZEDVOICEAS
+        MENUITEM "Create Blank Voice for Modelling", ID_FILE_CREATEBLANKVOICEFORMODELLING
+        MENUITEM "Load Phoneme",                ID_FILE_LOADPHONEME
+        MENUITEM "Save Phoneme",                ID_FILE_SAVEPHONEME
+    END
+    POPUP "Windowing"
+    BEGIN
+        MENUITEM "Blackman",                    ID_WINDOWING_BLACKMAN
+        MENUITEM "Hamming",                     ID_WINDOWING_HAMMING
+        MENUITEM "Hanning",                     ID_WINDOWING_HANNING
+    END
+END
+
+IDR_MENUBITRIPHONEMS MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Save Set of BiTriphonems Knowledge as.. ", ID_FILE_SAVEPERSONALIZEDVOICEAS
+        MENUITEM "Create Blank St of BiTriphonemes Knowledge", ID_FILE_CREATEBLANKVOICEFORMODELLING
+        MENUITEM "Load Bi or Triphoneme",       ID_FILE_LOADPHONEME
+        MENUITEM "Save Bi or Triphoneme",       ID_FILE_SAVEPHONEME
+    END
+    POPUP "Windowing"
+    BEGIN
+        MENUITEM "Blackman",                    ID_WINDOWING_BLACKMAN
+        MENUITEM "Hamming",                     ID_WINDOWING_HAMMING
+        MENUITEM "Hanning",                     ID_WINDOWING_HANNING
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DATAAN DIALOGEX 0, 0, 612, 373
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Words Count and Data Index"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,231,24,16,NOT WS_VISIBLE
+    PUSHBUTTON      "Close",IDCANCEL,232,350,26,16
+    PUSHBUTTON      "Refresh Inspect",IDC_INSPECT,141,351,61,15
+    LISTBOX         IDC_LISTINSP,73,113,59,253,LBS_NOINTEGRALHEIGHT | LBS_MULTICOLUMN | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_NWORDS,7,113,59,253,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Number of words starting with the letter",IDC_STATIC,7,13,57,29
+    LTEXT           "Position of the Words starting with the letter in the Database",IDC_STATIC,73,16,54,39
+    LTEXT           "Static",IDC_STATINFO,7,0,257,16
+    LTEXT           "Static",IDC_STATICMISS,138,273,123,22
+    LTEXT           "Static",IDC_STATICTOTW,140,18,123,21
+    LISTBOX         IDC_MISSWORDS,139,121,123,144,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITSINGLE,139,76,123,19,ES_AUTOHSCROLL
+    PUSHBUTTON      "List of Missing Words",IDC_BUTTONMISS,138,100,123,20
+    LISTBOX         IDC_LISTTRIPHONE,281,24,330,219,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Search Triphones frequency",IDC_FINDTRIPHO,283,0,98,19
+    EDITTEXT        IDC_EDIT2,414,0,198,20,ES_AUTOHSCROLL
+    LTEXT           "Static",IDC_STATICNUMBERTRIP,281,249,190,16
+    LISTBOX         IDC_LISTFINDBITRI,333,272,278,87,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Find BITRI",IDC_FINDALL,282,272,49,15
+    LTEXT           "Static",IDC_QUERYFOUND,281,341,51,13
+END
+
+IDD_SHOWPHONEM DIALOGEX 0, 0, 659, 422
+STYLE DS_SETFONT | DS_3DLOOK | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Graphical Phoneme Represantation"
+MENU IDR_MENUPHONEMS
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "->>",IDOK,113,14,17,13
+    EDITTEXT        IDC_EDIT234,129,0,206,16,ES_CENTER | ES_AUTOHSCROLL
+    PUSHBUTTON      "<<-",IDC_BUTTONBACK,113,0,17,13
+    PUSHBUTTON      "-",IDC_BUTTONMINUS,131,17,13,11
+    PUSHBUTTON      "+",IDC_BUTTONPLUS,179,17,13,11
+    LTEXT           "Small gain",IDC_STATIC,147,17,36,9
+    PUSHBUTTON      "+",IDC_BUTTONGLOBALGAIN,465,1,14,9
+    PUSHBUTTON      "--",IDC_BUTTONGAINMINUS,449,1,14,9
+    LISTBOX         IDC_LISTP,0,0,112,28,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Voice Gain",IDC_STATIC,411,2,36,9
+    PUSHBUTTON      "5 P.MA",IDC_BUTTON0LEFT,195,17,27,11
+    PUSHBUTTON      "Zoom Sel.",IDC_BUTTONZOOMSEL,337,1,38,13
+    PUSHBUTTON      "Zoom Ext.",IDC_BUTTONZOOMEXT,375,1,35,13
+    SCROLLBAR       IDC_SCROLLPHONEM,287,18,174,9,NOT WS_VISIBLE
+    PUSHBUTTON      "Conn",IDC_BUTTONCONNECT,263,17,22,11
+    PUSHBUTTON      "FE",IDC_BUTTONFADE,243,17,19,11
+    PUSHBUTTON      "FB",IDC_BUTTONFADEB,223,17,20,11
+    EDITTEXT        IDC_SELPHON,591,13,33,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SELSTART,509,0,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SELEND,591,0,33,12,ES_AUTOHSCROLL
+    LTEXT           "Range Sel.",IDC_STATIC,551,13,36,10
+    LTEXT           "Start",IDC_STATIC,489,1,15,8
+    LTEXT           "End",IDC_STATIC,573,0,17,10
+    PUSHBUTTON      "SHORTEN",IDC_BUTTONSHORTEN,467,15,38,12
+    PUSHBUTTON      "PLAY",IDC_PLAYPHONEM,626,2,33,24
+END
+
+IDD_SHOWBITRIPHONEM DIALOGEX 0, 0, 674, 426
+STYLE DS_SETFONT | DS_3DLOOK | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Graphical Phoneme Represantation"
+MENU IDR_MENUBITRIPHONEMS
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT234,176,1,217,16,ES_CENTER | ES_AUTOHSCROLL
+    PUSHBUTTON      "-",IDC_BUTTONMINUS,176,18,13,11
+    PUSHBUTTON      "+",IDC_BUTTONPLUS,224,18,13,11
+    LTEXT           "Small gain",IDC_STATIC,192,18,36,9
+    PUSHBUTTON      "+",IDC_BUTTONGLOBALGAIN,660,49,14,9,NOT WS_VISIBLE
+    PUSHBUTTON      "--",IDC_BUTTONGAINMINUS,619,42,14,9,NOT WS_VISIBLE
+    LISTBOX         IDC_LISTP,0,0,176,28,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "5 P.MA",IDC_BUTTON0LEFT,240,18,27,11
+    PUSHBUTTON      "Zoom Sel.",IDC_BUTTONZOOMSEL,395,2,38,13
+    PUSHBUTTON      "Zoom Ext.",IDC_BUTTONZOOMEXT,433,2,35,13
+    SCROLLBAR       IDC_SCROLLPHONEM,548,30,126,9,NOT WS_VISIBLE
+    PUSHBUTTON      "Conn",IDC_BUTTONCONNECT,308,18,22,11
+    PUSHBUTTON      "FE",IDC_BUTTONFADE,288,18,19,11
+    PUSHBUTTON      "FB",IDC_BUTTONFADEB,268,18,20,11
+    EDITTEXT        IDC_SELPHON,641,15,33,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SELSTART,593,0,30,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SELEND,644,0,30,12,ES_AUTOHSCROLL
+    LTEXT           "Range Sel.",IDC_STATIC,571,17,36,10
+    LTEXT           "Start",IDC_STATIC,574,2,15,8
+    LTEXT           "End",IDC_STATIC,625,2,17,10
+    PUSHBUTTON      "SHORTEN",IDC_BUTTONSHORTEN,529,17,38,12
+    PUSHBUTTON      "Play",IDC_PLAYBITRI,507,2,61,11
+    LTEXT           "Voice Gain",IDC_STATIC,539,51,36,9,NOT WS_VISIBLE
+    PUSHBUTTON      "FIND BITRIPHONE",IDC_FINDTRIBI,334,18,69,11
+    EDITTEXT        IDC_EDITFINDIT,403,17,89,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "ResSrc",IDC_RESETSEARCH,495,17,29,13
+    EDITTEXT        IDC_NUMBER,467,2,37,12,ES_AUTOHSCROLL
+END
+
+IDD_PASSWORD DIALOGEX 300, 300, 186, 95
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,20,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,143,74,36,14
+    EDITTEXT        IDC_PASSWORDCHECK,15,43,141,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "please enter your name",IDC_STATIC,82,22,86,12
+    LTEXT           "Please do not distribute this software",IDC_STATIC,7,77,120,11
+    EDITTEXT        IDC_TIMELEFT,15,63,52,12,ES_AUTOHSCROLL
+    LTEXT           "days left to evaluate",IDC_STATIC,70,65,72,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DATAAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        BOTTOMMARGIN, 366
+    END
+
+    IDD_SHOWPHONEM, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 419
+    END
+
+    IDD_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\TTS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "1 TYPELIB ""TTS.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_BUTTONAA             "The a value\nAvalue"
+END
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\TTS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+1 TYPELIB "TTS.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

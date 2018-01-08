@@ -1,0 +1,29 @@
+// TTS.idl : type library source for TTS.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (TTS.tlb).
+
+[ uuid(22EC0402-1E83-43DB-B781-B4B6EDA8C1B0), version(1.0) ]
+library TTS
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for CTTSDoc
+	
+	[ uuid(12A81D1F-2DD0-4B39-9ED6-04435A687ADB) ]
+	dispinterface ITTS
+	{
+		properties:
+			
+		methods:
+	};
+
+	//  Class information for CTTSDoc
+	
+	[ uuid(45747DEE-03D5-42F3-A860-AA19A0887724) ]
+	coclass CTTSDoc
+	{
+		[default] dispinterface ITTS;
+	};
+};

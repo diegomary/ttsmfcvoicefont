@@ -1,0 +1,19 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+HKEY_CLASSES_ROOT\.tts = TTS.Document
+HKEY_CLASSES_ROOT\TTS.Document\shell\open\command = TTS.EXE %1
+HKEY_CLASSES_ROOT\TTS.Document\shell\open\ddeexec = [open("%1")]
+HKEY_CLASSES_ROOT\TTS.Document\shell\open\ddeexec\application = TTS
+    ; note: the application is optional
+    ;  (it defaults to the app name in "command")
+HKEY_CLASSES_ROOT\TTS.Document = TTS.Document
+HKEY_CLASSES_ROOT\TTS.Document\CLSID = {45747DEE-03D5-42F3-A860-AA19A0887724}
+
+HKEY_CLASSES_ROOT\CLSID\{45747DEE-03D5-42F3-A860-AA19A0887724} = TTS.Document
+HKEY_CLASSES_ROOT\CLSID\{45747DEE-03D5-42F3-A860-AA19A0887724}\ProgId = TTS.Document
+
+HKEY_CLASSES_ROOT\CLSID\{45747DEE-03D5-42F3-A860-AA19A0887724}\LocalServer32 = TTS.EXE
